@@ -52,7 +52,7 @@ router.post(
       }
 
       // * Return jsonwebtoken
-      const payload = { user: { id: user.id, accountType: user.accountType } };
+      const payload = { user: { id: user.id, /* any other info you need from user object */ } };
 
       jwt.sign(
         payload,
