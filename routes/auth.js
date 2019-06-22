@@ -52,12 +52,12 @@ router.post(
       }
 
       // * Return jsonwebtoken
-      const payload = { user: { id: user.id, /* any other info you need from user object */ } };
+      const payload = { user: { id: user.id /* insert any other information you want in the payload */ } };
 
       jwt.sign(
         payload,
         process.env.JWT_SECRET,
-        { expiresIn: 360000 },
+        { expiresIn: 360000 }, // * in seconds
         (err, token) => {
           if (err) throw err;
           res.json({ token });
