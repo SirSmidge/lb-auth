@@ -26,7 +26,7 @@ module.exports = function(req, res, next) {
 
     // * Attach information you want to pass on to your req
     req.user = decoded.user;
-    next();
+    next(); // * Cool thing: After the next() function, in your route file, you can access req.user however you need.
   } catch (err) {
     res.status(401).json({ msg: 'Token is not valid' });
   }
